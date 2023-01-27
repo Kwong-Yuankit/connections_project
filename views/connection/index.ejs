@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div id="main-div">
+            <% if(connections.length) {%>
+                <% category.forEach(cat => {%>
+                    <h3><%=cat.charAt(0).toUpperCase() + cat.slice(1)%></h3>
+                    <%connections.forEach(connection => {%>
+                        <%if(connection.type === cat) {%>
+                            <ul>
+                                <li><a href="/connections/<%= connection.id%>"><%=connection.title%></a></li>
+                            </ul>
+                        <%}%>
+                    <%})%>
+                <%})%>
+            <%} else {%>
+                <p>No connections to display</p>
+                <%}%>
+        </div>
+    </main>
+
+<%- include('../partials/footer.ejs')%>

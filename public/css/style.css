@@ -1,0 +1,324 @@
+body {
+    background-color: #f9faf9;
+    color: black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    min-height: 100vh;
+}
+
+hr {
+    border-bottom: 2px solid black;
+}
+
+header {
+    border: solid 1px black;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #1d3557;
+	padding-top: 20px;
+}
+footer {
+    background-color: #1d3557;
+    color: #f1faee;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+hr {
+    width: 100%;
+}
+#footer-nav a {
+    margin-right: 30px;
+    color: white;
+    text-decoration: none;
+}
+#footer-nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#userLinks li{
+    display: inline;
+    justify-content:space-evenly;
+    list-style-type: none;
+    padding-left: 2em;
+}
+
+
+#gen_nav {
+    display: inline-block;
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 98%;
+    
+}
+
+
+#gen_nav a {
+    color: white;
+    text-decoration: none;
+}
+
+#gen_nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#main-head {
+    display: inline;
+    padding-left: 1em;
+}
+
+#main-head a {
+    color:white;
+    text-decoration: none;
+}
+
+#main-div {
+    height: 100%;
+    width: 75%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+
+#logo {
+    width: 200px;
+}
+
+#userLinks {
+    float:right;
+    text-align: right;
+    position: relative;
+    margin-top: 15px;
+    padding-right: 20px;
+    
+}
+
+main {
+    padding: 80px 100px 100px 0px;
+}
+
+
+
+main a {
+    color: black;
+    text-decoration: none;
+}
+main a:hover {
+    color: green;
+    text-decoration: underline;
+}
+
+.myForm {
+    display: block;
+    height: 700px;
+    margin-left: 35%;
+    margin-right:35%;
+    width: 70%;
+
+}
+
+.myForm .form-group {
+    padding-bottom: 5px;
+}
+
+.myForm label {
+    display: block;
+}
+
+.myForm input[type="text"], .myForm textarea {
+    padding: 10px;
+    width: 30%;
+}
+
+.myForm input[type="time"], .myForm input[type="date"] {
+    padding: 10px;
+    width: 30%;
+}
+
+.myForm button {
+    font-size: 16px;
+    background-color: lightgreen;
+    width: 15%;
+    height: 44px;
+}
+
+.myForm button a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.myForm select {
+    padding: 10px;
+    width: 30%;
+}
+
+#container {
+    height:100%;
+    margin: auto auto;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    width: 50%;
+    padding-bottom: 50px
+    
+}
+
+#container-img-box img {
+    width: 300px;
+}
+
+#container-text {
+    text-align: center;
+}
+
+#container-details {
+    text-align: center;
+}
+.connection-button {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    font-size: 18px;
+    box-shadow: 0px 5px 5px 0px black;
+    cursor: pointer;
+}
+
+.createButton {
+    margin-top: 10px;
+    display: block;
+    width: 90px;
+    height: 25px;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    background: black;
+    color: white;
+    line-height: 20px;
+    box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.712);
+}
+
+a.createButton:hover{
+    text-decoration: none;
+    background: green;
+    color: white;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    font-size: 18px;
+    box-shadow: 0px 5px 5px 0px black;
+    cursor: pointer;
+}
+
+.success {
+    background: rgba(108, 192, 112, 0.7);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px;
+    margin-top: 20px;
+    animation: hideElem 5s forwards;
+}
+
+.error {
+    background: rgba(255, 102, 51, 0.7);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px;
+    margin-top: 20px;
+    animation: hideElem 5s forwards;
+}
+
+@keyframes hideElem {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#container-rsvp {
+    text-align: center;
+    display: inline-block;
+}
+
+#yesButton {
+    background-color: rgb(18, 190, 18);
+    color: white;
+    padding: 7px 18px;
+    text-align: center;
+    font-size: 16px;
+    margin: 2px 2px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px 0px hsla(0, 0%, 0%, 0.466);
+    cursor: pointer;
+}
+
+#noButton {
+    background-color: red;
+    color: white;
+    padding: 7px 18px;
+    text-align: center;
+    font-size: 16px;
+    margin: 2px 2px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px 0px hsla(0, 0%, 0%, 0.466);
+    cursor: pointer;
+}
+
+#maybeButton {
+    background-color: rgb(54, 54, 250);
+    color: white;
+    padding: 7px 18px;
+    text-align: center;
+    font-size: 16px;
+    margin: 2px 2px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px 0px hsla(0, 0%, 0%, 0.466);
+    cursor: pointer;
+}
+
+.profileButton {
+    background-color: black;
+    color: white;
+    padding: 5px 15x;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 3px;
+}
+

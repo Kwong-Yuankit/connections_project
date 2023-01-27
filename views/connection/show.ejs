@@ -1,0 +1,47 @@
+<%- include('../partials/header.ejs')%>
+<main>
+        <div id="container">
+            <div id="container-img-box">
+                <img src="<%= connection.imgURL%>" alt="event image">
+            </div>
+            <div id="container-text">
+                <h2 id="titleHeader"><%= connection.title%></h2>
+                <p><b>Hosted By <%= connection.host.firstName + ' ' + connection.host.lastName%></b></p>
+                <p><b>Date</b>: <%= connection.date.toISOString().substring(0,10)%><br><br>
+                <b>Time:</b> <%= connection.starttime%>-<%= connection.endtime%></p>
+                <p><b>Location:</b> <%= connection.location%></p>
+            </div>
+            <div>
+                <%if(user == connection.host._id) {%>
+                    <h4><%=count%> Members RSVP'd</h4>
+                    <form>
+                        <button type = "submit" formmethod = "GET" formaction = "/connections/<%= connection.id%>/edit">Edit</button>
+                        <br><br>
+                        <button type = "submit" formmethod = "POST" formaction = "/connections/<%= connection.id%>?_method=DELETE">Delete</button>
+                    </form>
+                    
+                <%}%>
+               
+            </div>
+            <div id="container-details">
+                <h2>Details</h2>
+                <p><%= connection.details%></p>
+            </div>
+
+
+            <%if(user != connection.host._id) {%>
+                <div id="container-rsvp">
+                    <br>
+                    <h4><%=count%> Members RSVP'd</h4>
+                    <form action="/connections/<%= connection.id%>/rsvp" method="POST">
+                        <label>RSVP to Attend!</label><br>
+                        <input type="submit" id="yesButton" name="rsvp", value="Yes"></input>
+                        <input type="submit" id="noButton" name="rsvp", value="No"></input>
+                        <input type="submit" id="maybeButton" name="rsvp" value="Maybe"></input>
+                    </form>
+                </div>
+            <%}%> 
+        </div>
+    </main>
+
+<%- include('../partials/footer.ejs')%>

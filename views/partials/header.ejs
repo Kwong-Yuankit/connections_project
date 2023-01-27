@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Kwongsong Group - Homepage</title>
+</head>
+
+<body>
+    <header>
+        <div id="main-head">
+            <a href="/"><img id="logo" src="/images/logo.png" alt="kwongsong logo"></a>
+            <nav id="userLinks">
+                <ul>
+                    <li><a href="/connections/new">Start a New Connection</a></li>
+                    <%if(!user) {%>
+                        <li><a href="/users/new">Sign up</a></li>
+                        <li><a href="/users/login">Login</a></li>
+                    <%} else {%>
+                        <li><a href="/users/profile">Profile</a></li>
+                        <li><a href="/users/logout">Logout</a></li>
+                    <%}%>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+        <nav id="gen_nav">
+            <a href="/connections">Connections</a>
+        </nav>
+    </header>
+    <%if(errorMessages.length > 0) {
+        errorMessages.forEach(message=>{%>
+            <div class="error"><%=message%></div>
+        <%});
+    }%>
+
+    <%if(successMessages.length > 0) {
+        successMessages.forEach(message=>{%>
+            <div class="success"><%=message%></div>
+        <%});
+    }%>
+

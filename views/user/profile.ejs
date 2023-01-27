@@ -1,0 +1,55 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <div id="main-div">
+        <h2>Welcome, <%= user.firstName + " " + user.lastName%></h2>
+        
+        <%if(connections.length) {%>
+            <h4>Your Connections:</h4>
+            <table style="width:60%">
+                <tr>
+                    <th style="width:33%">Connection</th>
+                    <th style="width:33%">Category</th>
+                    <th style="width:33%">Actions</th>
+                </tr>
+            <%connections.forEach(connection => {%>
+                <tr>
+                    <td><a href="/connections/<%=connection.id%>"><%=connection.title%></a></td>
+                    <td><%=connection.type%></td>
+                    <td>
+                        <form>
+                            <input type = "submit" formmethod = "GET" formaction = "/connections/<%= connection.id%>/edit" value="Update" class="profileButton"></input>
+                            <input type = "submit" formmethod = "POST" formaction = "/connections/<%= connection.id%>?_method=DELETE" value="Delete" class="profileButton"></input>
+                        </form>
+                    </td>
+                </tr>
+            <%});%>
+        </table>
+        <%} else {%>
+            <p>You have not created connections yet.</p>
+        <%}%>
+
+        <br>
+
+        <%if(rsvps.length) {%>
+            <h4>Your RSVPs:</h4>
+            <table style="width:60%">
+                <tr>
+                    <th style="width:33%">Connection</th>
+                    <th>Category</th>
+                    <th>Going?</th>
+                </tr>
+            <%rsvps.forEach(rsvp => {%>
+            <!--   <a href="/connections/<%=rsvp.connectionId.id%>"><%=rsvp.connectionId.title + ' ' + rsvp.status%></p></a>-->
+                <tr>
+                    <td style="width:33%"><a href="/connections/<%=rsvp.connectionId.id%>"><%=rsvp.connectionId.title%></a></td>
+                    <td style="width:33%"><%=rsvp.connectionId.type%></td>
+                    <td style="width:33%"><%=rsvp.status%></td>
+                </tr>
+            <%});%>
+        </table>
+        <%} else {%>
+            <p>You have not made any RSVPs yet.</p>
+        <%}%>
+    </div>
+</main>
+<%- include('../partials/footer.ejs')%>
